@@ -1,7 +1,7 @@
 # Launch TPU resources for development with SkyPilot command:
 #   sky launch tpu_resource.sky.yaml
 resources:
-  accelerators: $ACCELERATOR
+  accelerators: tpu-v6e-1
   accelerator_args:
       tpu_vm: True
       runtime_version: v2-alpha-tpuv6e
@@ -15,7 +15,7 @@ setup: |
   rm ~/.ssh/config
   if [ -d "sglang-jax" ]; then pip uninstall -y sgl-jax || true && rm -rf sglang-jax; fi
   git clone https://github.com/sgl-project/sglang-jax.git
-  cd sglang-jax && git fetch origin $REF:$REF && git checkout $REF
+  cd sglang-jax && git fetch origin main:main && git checkout main
   uv venv --python 3.12
   source .venv/bin/activate
   uv pip install -e "python[all]"

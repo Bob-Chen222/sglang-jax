@@ -1,0 +1,1 @@
+rsync -Pavz python ${CLUSTER_NAME}:/home/gcpuser/sky_workdir/sglang-jax/python
